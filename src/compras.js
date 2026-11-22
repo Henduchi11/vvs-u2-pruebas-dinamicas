@@ -3,7 +3,9 @@
  * @param {number} precio    Precio unitario.
  * @param {number} cantidad  Unidades compradas.
  * @param {number} descuento Porcentaje de descuento.
- * @returns {number} Total.
+ * @returns {number} Total redondeado a dos decimales.
+ * @throws {TypeError}  Si alguna entrada no es un número finito (RF-05).
+ * @throws {RangeError} Si precio < 0, cantidad <= 0 o descuento fuera de [0, 100] (RF-04).
  */
 function validarNumero(valor, nombre) {
   // RF-05 (DEF-01): rechaza cadenas, booleanos, null, undefined, NaN e ±Infinity
@@ -31,6 +33,9 @@ function calcularTotal(precio, cantidad, descuento) {
 
   const subtotal = precio * cantidad;
   const valorDescuento = subtotal * descuento / 100;
-  return subtotal - valorDescuento;
+  const total = subtotal - valorDescuento;
+
+  // RF-03 (DEF-04): redondeo a dos decimales; "+ 0" normaliza -0 a 0
+  return Math.round((total + Number.EPSILON) * 100) / 100 + 0;
 }
 module.exports = { calcularTotal };
