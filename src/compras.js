@@ -17,6 +17,14 @@ function calcularTotal(precio, cantidad, descuento) {
   validarNumero(cantidad, 'cantidad');
   validarNumero(descuento, 'descuento');
 
+  // RF-04 (DEF-02): precio negativo o cantidad <= 0 fuera de rango
+  if (precio < 0) {
+    throw new RangeError('precio no puede ser negativo');
+  }
+  if (cantidad <= 0) {
+    throw new RangeError('cantidad debe ser mayor que 0');
+  }
+
   const subtotal = precio * cantidad;
   const valorDescuento = subtotal * descuento / 100;
   return subtotal - valorDescuento;
