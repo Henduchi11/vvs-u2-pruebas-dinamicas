@@ -1,0 +1,37 @@
+{
+  "name": "vvs-u2-pruebas-dinamicas",
+  "version": "1.0.0",
+  "description": "Laboratorio de pruebas dinámicas (VVS Unidad 2): calcularTotal con Jest",
+  "main": "src/compras.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --runInBand",
+    "coverage": "jest --runInBand --coverage",
+    "perf": "node scripts/rendimiento.js"
+  },
+  "keywords": [],
+  "author": "Henry Duchi",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "lcov"
+    ],
+    "verbose": true,
+    "reporters": [
+      "default"
+    ]
+  }
+}
