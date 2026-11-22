@@ -1,3 +1,10 @@
+function validarNumero(valor, nombre) {
+  // RF-05 (DEF-01): rechaza cadenas, booleanos, null, undefined, NaN e ±Infinity
+  if (typeof valor !== 'number' || !Number.isFinite(valor)) {
+    throw new TypeError(`${nombre} debe ser un número finito`);
+  }
+}
+
 /**
  * Calcula el total de una compra aplicando un descuento porcentual.
  * @param {number} precio    Precio unitario.
@@ -7,13 +14,6 @@
  * @throws {TypeError}  Si alguna entrada no es un número finito (RF-05).
  * @throws {RangeError} Si precio < 0, cantidad <= 0 o descuento fuera de [0, 100] (RF-04).
  */
-function validarNumero(valor, nombre) {
-  // RF-05 (DEF-01): rechaza cadenas, booleanos, null, undefined, NaN e ±Infinity
-  if (typeof valor !== 'number' || !Number.isFinite(valor)) {
-    throw new TypeError(`${nombre} debe ser un número finito`);
-  }
-}
-
 function calcularTotal(precio, cantidad, descuento) {
   validarNumero(precio, 'precio');
   validarNumero(cantidad, 'cantidad');

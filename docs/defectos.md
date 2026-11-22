@@ -79,4 +79,4 @@ Evidencia de detección: `evidencias/pruebas-iniciales.txt` (17 de 26 pruebas fa
 | ID | Observación | Decisión |
 |---|---|---|
 | OBS-01 | Se aceptan cantidades fraccionarias (p. ej. 1.5). | La especificación no exige enteros; no se cambia el requisito. Se reporta como riesgo residual R-RES-01. |
-| OBS-02 | Productos muy grandes (p. ej. `precio = 1e308`, `cantidad = 10`) desbordan a `Infinity`. | Entradas finitas válidas pero resultado no finito; se reporta como riesgo residual R-RES-02. |
+| OBS-02 | Productos muy grandes (p. ej. `precio = 1e308`, `cantidad = 10`) desbordan: el subtotal es `Infinity` y el total resulta `NaN`. | Entradas finitas válidas pero resultado no finito; se reporta como riesgo residual R-RES-02. |

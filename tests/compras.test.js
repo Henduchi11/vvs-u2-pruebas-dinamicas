@@ -79,3 +79,36 @@ describe('RF-05 · TypeError para entradas no numéricas o no finitas', () => {
     expect(() => calcularTotal(precio, cantidad, descuento)).toThrow(TypeError);
   });
 });
+
+/**
+ * Suite de regresión añadida tras las correcciones DEF-01..DEF-04.
+ * Protege las correcciones frente a cambios futuros (ISTQB CTFL v4.0.1 §2.2.3)
+ * y ejercita combinaciones no cubiertas por los casos originales.
+ */
+describe('Regresión · tras correcciones DEF-01..DEF-04', () => {
+  test.each([
+    ['RG-01', 'redondeo half-up de 1.005', 1.005, 1, 0, 1.01],
+    ['RG-02', 'redondeo half-up de 2.675', 2.675, 1, 0, 2.68],
+    ['RG-03', 'combinación decimales + descuento', 19.99, 3, 10, 53.97],
+  ])('%s · %s (%p, %p, %p) → %p', (_id, _desc, precio, cantidad, descuento, esperado) => {
+    expect(calcularTotal(precio, cantidad, descuento)).toBe(esperado);
+  });
+
+  test('RG-04 · el TypeError identifica el parámetro inválido (DEF-01)', () => {
+    expect(() => calcularTotal(10, 1, '5')).toThrow(/descuento/);
+  });
+
+  test('RG-05 · el RangeError identifica el parámetro inválido (DEF-02)', () => {
+    expect(() => calcularTotal(10, 0, 0)).toThrow(/cantidad/);
+  });
+
+  test('RG-06 · precio 0 con descuento 100 % devuelve 0 y no -0 (DEF-04)', () => {
+    expect(Object.is(calcularTotal(0, 1, 100), 0)).toBe(true);
+  });
+
+  test('RG-07 · función determinista: 1000 invocaciones iguales dan el mismo resultado', () => {
+    const resultados = new Set();
+    for (let i = 0; i < 1000; i++) resultados.add(calcularTotal(33.33, 3, 33));
+    expect([...resultados]).toEqual([66.99]);
+  });
+});
