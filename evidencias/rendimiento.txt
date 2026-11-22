@@ -1,0 +1,18 @@
+=== RNF-01 · Medición exploratoria de rendimiento ===
+Fecha:        2026-11-22T23:15:28.054Z
+Node.js:      v24.22.1 (V8 13.6.233.17-node.58)
+SO:           Linux 6.12.113+ x64
+CPU:          Intel(R) Xeon(R) Processor × 8 núcleos lógicos
+Memoria:      15.6 GiB
+Parámetros:   1.000.000 llamadas × 5 repeticiones (+1 calentamiento)
+
+ns por llamada         mediana       min       max       p95
+Versión corregida       21.2      20.6      21.6      21.6
+Versión inicial         12.3      12.2      12.3      12.3
+Sobrecosto de validación + redondeo (mediana): 8.9 ns/llamada
+Throughput versión corregida (mediana): 47.1 millones de llamadas/s
+Camino de error (RangeError): 2792.6 ns/llamada (100.000 excepciones)
+
+Referencia exploratoria CP-24 (< 1000 ns/llamada): CUMPLE
+Limitaciones: microbenchmark en un solo proceso; influyen el JIT de V8, el GC,
+la carga de la máquina y la frecuencia de CPU. No mide concurrencia ni latencia de red.
