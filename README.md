@@ -5,7 +5,7 @@ Autor: **Henry Duchi**
 
 Laboratorio de pruebas dinámicas sobre el módulo `src/compras.js` de una tienda digital, entregado con defectos intencionales: planificación, diseño de casos (particiones de equivalencia, valores límite, entradas inválidas), automatización con Jest, gestión de defectos, corrección incremental con regresión y medición exploratoria de rendimiento.
 
-![tests](https://img.shields.io/badge/tests-33%2F33%20passing-brightgreen) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen) ![defects](https://img.shields.io/badge/defectos-4%20cerrados-blue)
+[![Pruebas Jest](https://github.com/Henduchi11/vvs-u2-pruebas-dinamicas/actions/workflows/pruebas.yml/badge.svg)](https://github.com/Henduchi11/vvs-u2-pruebas-dinamicas/actions/workflows/pruebas.yml) ![tests](https://img.shields.io/badge/tests-33%2F33%20passing-brightgreen) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen) ![defects](https://img.shields.io/badge/defectos-4%20cerrados-blue)
 
 ## Especificación (base de prueba)
 
@@ -36,6 +36,7 @@ Laboratorio de pruebas dinámicas sobre el módulo `src/compras.js` de una tiend
 ├── scripts/
 │   ├── evidencia.sh            # Ejecuta la suite y guarda evidencia con entorno
 │   └── rendimiento.js          # Benchmark exploratorio reproducible
+├── .github/workflows/pruebas.yml  # Integración continua (Node 20/22/24)
 ├── package.json
 └── package-lock.json
 ```
@@ -89,6 +90,7 @@ Cobertura final: **100 %** sentencias (16/16), ramas (12/12), funciones (2/2) y 
 8. Regresión — casos RG y evidencia final con cobertura
 9. Fase D — rendimiento y reporte final
 10. README
+11. CI — GitHub Actions ejecuta `npm ci` + `npm run coverage` en Node 20/22/24 en cada push
 
 ## Referencias
 
