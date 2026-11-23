@@ -6,7 +6,7 @@
 |---|---|
 | Identificador | PP-VVS-U2-01 |
 | Versión | 1.0 |
-| Autor | Henry Duchi |
+| Autor | Henry Geovanny Duchi |
 | Objeto de prueba | `calcularTotal(precio, cantidad, descuento)` en `src/compras.js` |
 | Base de prueba | Especificación RF-01 … RF-05 y RNF-01 del enunciado (Unidad 2) |
 
@@ -126,6 +126,6 @@ Análisis de riesgo según ISTQB CTFL v4.0.1 §5.2 (probabilidad × impacto, esc
 
 | Rol | Responsable |
 |---|---|
-| Analista / diseñador de pruebas | Henry Duchi |
-| Automatizador y ejecutor | Henry Duchi |
-| Desarrollador (corrección) | Henry Duchi |
+| Analista / diseñador de pruebas | Henry Geovanny Duchi |
+| Automatizador y ejecutor | Henry Geovanny Duchi |
+| Desarrollador (corrección) | Henry Geovanny Duchi |

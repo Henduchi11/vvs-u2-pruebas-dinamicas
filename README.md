@@ -1,7 +1,8 @@
 # VVS U2 · Laboratorio de pruebas dinámicas con Jest
 
 - **Asignatura:** Verificación y Validación de Software — Unidad 2: Evaluación dinámica
-- **Autor:** Henry Duchi
+- **Autor:** Henry Geovanny Duchi
+- **Universidad:** Universidad Politécnica Salesiana — sede Cuenca
 - **Informe:** `Duchi_Henry_VVS_U2.pdf` (entregado en el aula virtual)
 
 Laboratorio de pruebas dinámicas sobre el módulo `src/compras.js` de una tienda digital, entregado con defectos intencionales: planificación, diseño de casos (particiones de equivalencia, valores límite, entradas inválidas), automatización con Jest, gestión de defectos, corrección incremental con regresión y medición exploratoria de rendimiento.

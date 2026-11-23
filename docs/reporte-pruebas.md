@@ -7,7 +7,7 @@
 | Identificador | RP-VVS-U2-01 |
 | Plan asociado | `docs/plan-pruebas.md` (PP-VVS-U2-01) |
 | Objeto de prueba | `src/compras.js` — `calcularTotal(precio, cantidad, descuento)` |
-| Autor | Henry Duchi |
+| Autor | Henry Geovanny Duchi |
 | Entorno | Node.js v24.22.1 · npm 11.21.1 · Jest 30.5.2 · Linux x86_64 (Intel Xeon, 8 núcleos lógicos, 15,6 GiB) |
 
 ## 1. Resumen ejecutivo
